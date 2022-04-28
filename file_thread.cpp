@@ -14,7 +14,7 @@ void f_create(int begin, mutex& test_mutex)
     f = fopen("test.bin", "rb");
     f_buf = fopen(string("test" + to_string(begin) + ".bin").c_str(), "wb");
     int* buf = new int;
-    fseek(f, begin, SEEK_SET);
+    fseek(f, begin*sizeof(int)*10, SEEK_SET);
     fseek(f_buf, 0, SEEK_SET);
     for (int i = 0; i < 10; i++)
     {
